@@ -1,29 +1,34 @@
 <?php
 // Define the theme slug and repository URL
 $theme_slug = 'xwebdesign';
-$repository_url = 'https://example.com/your-theme-repo.zip';
-
-// Check if the theme is already installed
-if (wp_get_theme($theme_slug)->exists()) {
-    // Get the latest version information from the repository URL
-    $response = wp_remote_get($repository_url);
-
-    if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
-        // Update the theme
-        $updated = wp_update_theme($repository_url);
-
-        if (is_wp_error($updated)) {
-            // Update failed
-            echo 'Theme update failed. Error: ' . $updated->get_error_message();
-        } else {
-            // Update successful
-            echo 'Theme updated successfully.';
+$repository_url = 'https://github.com/ihamedm/xwebdesign/archive/refs/heads/main.zip';
+// Automatic theme updates from the GitHub repository
+add_filter('pre_set_site_transient_update_themes', 'automatic_GitHub_updates', 100, 1);
+function automatic_GitHub_updates($data) {
+    // Theme information
+    $theme   = get_stylesheet(); // Folder name of the current theme
+    $current = wp_get_theme()->get('Version'); // Get the version of the current theme
+    // GitHub information
+    $user = 'ihamedm'; // The GitHub username hosting the repository
+    $repo = 'xwebdesign'; // Repository name as it appears in the URL
+    // Get the latest release tag from the repository. The User-Agent header must be sent, as per
+    // GitHub's API documentation: https://developer.github.com/v3/#user-agent-required
+    $file = @json_decode(@file_get_contents('https://api.github.com/repos/'.$user.'/'.$repo.'/releases/latest', false,
+        stream_context_create(['http' => ['header' => "User-Agent: ".$user."\r\n"]])
+    ));
+    if($file) {
+        $update = filter_var($file->tag_name, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        // Only return a response if the new version number is higher than the current version
+        if($update > $current) {
+            $data->response[$theme] = array(
+                'theme'       => $theme,
+                // Strip the version number of any non-alpha characters (excluding the period)
+                // This way you can still use tags like v1.1 or ver1.1 if desired
+                'new_version' => $update,
+                'url'         => 'https://github.com/'.$user.'/'.$repo,
+                'package'     => $file->assets[0]->browser_download_url,
+            );
         }
-    } else {
-        // Unable to fetch the repository URL
-        echo 'Unable to fetch the repository URL.';
     }
-} else {
-    // Theme not installed
-    echo 'Theme not installed.';
+    return $data;
 }
