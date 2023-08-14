@@ -1,0 +1,19 @@
+@layer utilities {
+
+  .fa-num {
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
+    font-feature-settings: "ss02";
+  }
+
+}
+
+.aligncenter{
+  @apply mx-auto;
+}
+.alignright{
+  @apply float-right ml-4;
+}
+.alignleft{
+  @apply float-left mr-4;
+}
