@@ -11,7 +11,7 @@
     "production": "cross-env NODE_ENV=production concurrently \"npm run production:css-app\" \"npm run production:js\"",
     "dev": "cross-env NODE_ENV=development concurrently \"npm run dev:css-app\" \"npm run dev:js\"",
     "watch": "cross-env NODE_ENV=development concurrently \"npm run watch:css-app\" \"npm run watch:js\"",
-    "browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"sepid.local\" --host=\"xweb.local\" --no-notify --open=false --files=\"./\"",
+    "browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"xweb.local\" --host=\"xweb.local\" --no-notify --open=false --files=\"./\"",
     "watch-sync": "clear && cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run watch\""
   },
   "devDependencies": {
