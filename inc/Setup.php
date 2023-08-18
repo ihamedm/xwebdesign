@@ -12,7 +12,8 @@ class Setup{
         add_action('after_setup_theme', array($this, 'remove_theme_supports'), 2);
         add_action('after_setup_theme', array($this, 'register_menu_locations'), 2);
         add_action('after_setup_theme', array($this, 'set_thumbnail_sizes'), 2);
-        add_action('wp_head', array($this, 'show_favicon'));
+        add_action('widgets_init', array($this, 'create_widget_areas' ));
+//        add_action('wp_head', array($this, 'show_favicon'));
 
 
         // filters
@@ -33,7 +34,7 @@ class Setup{
         $version = wp_get_theme()->get('Version');
 
         wp_enqueue_style( 'Xweb',  get_stylesheet_directory_uri() . '/dist/styles.css' ,null, $version);
-        wp_enqueue_script('Xweb', get_stylesheet_directory_uri() .'dist/scripts.js' , null , $version, true );
+        wp_enqueue_script('Xweb', get_stylesheet_directory_uri() .'/dist/scripts.js' , null , $version, true );
 
 
         wp_localize_script('spd', 'SpdJs', array(
@@ -72,14 +73,29 @@ class Setup{
             'primary'   => __( 'Primary Menu', 'spd' ),
             'mobile'    => __( 'Mobile', 'spd' ),
             'socials'   => __( 'Social Menu', 'spd' ),
-            'footer'    => __( 'Footer Menu', 'spd' ),
+            'footer1'    => __( 'Footer Menu 1', 'spd' ),
+            'footer2'    => __( 'Footer Menu 2', 'spd' ),
         ) );
     }
 
     public function set_thumbnail_sizes() {
-        add_image_size( 'spd-thumb', 220, 220 , true );
+        add_image_size( 'spd-thumb', 240, 140 , true );
         add_image_size( 'spd-cover', 650, 500 , true );
     }
+
+
+    public function create_widget_areas(){
+        register_sidebar( array(
+            'name'          => __( 'Main Sidebar', 'spd' ),
+            'id'            => 'main',
+            'before_widget' => '<div id="%1$s" class="widget border border-slate-100 rounded-md overflow-hidden p-6 %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="text-slate-800 font-medium text-base">',
+            'after_title'   => '</h4>',
+        ) );
+    }
+
+
 
     /**
      * @return void
@@ -87,7 +103,7 @@ class Setup{
      * @todo the options
      */
     public function show_favicon(){
-        echo "<link rel='shortcut icon' href='" . get_stylesheet_directory_uri() . 'assets/img/favicon.png' . "' />" . "\n";
+        echo "<link rel='shortcut icon' href='" . get_stylesheet_directory_uri() . '/assets/img/favicon.png' . "' />" . "\n";
     }
 
     /**

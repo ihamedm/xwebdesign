@@ -1,0 +1,19 @@
+.post-pagination{
+
+  ul{
+    @apply flex justify-center gap-2 items-center w-full;
+
+    span,a{
+      @apply bg-slate-100 text-slate-800 rounded-full text-sm text-center w-8 h-8 inline-flex items-center justify-center;
+
+      &.current{
+        @apply bg-primary text-white;
+      }
+
+      &:hover:not(.current){
+        @apply bg-slate-200;
+      }
+    }
+  }
+
+}

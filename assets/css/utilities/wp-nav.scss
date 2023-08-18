@@ -1,0 +1,43 @@
+#primary-menu{
+  li{
+    @apply block;
+
+    a{
+      @apply block py-2 px-3 !text-slate-700
+    }
+
+    :not(.menu-item-has-children) a{
+      @apply block;
+    }
+
+    &.menu-item-has-children{
+      @apply relative;
+
+      ul.sub-menu {
+        @apply absolute bg-white p-4 shadow-xl min-w-[200px]
+                right-0 border-b border-b-gray-200 z-10
+                transition-all duration-200 ease-in-out translate-y-5 opacity-0 pointer-events-none space-y-4;
+
+        li{
+          @apply w-full;
+        }
+      }
+
+      &:hover{
+        >ul.sub-menu{
+          @apply flex-col translate-y-0 opacity-100 pointer-events-auto gap-4;
+        }
+      }
+
+    }
+  }
+
+  >li{
+
+    &:first-child{
+      a{
+        @apply pr-0;
+      }
+    }
+  }
+}

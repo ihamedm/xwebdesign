@@ -1,9 +1,15 @@
 @layer utilities {
 
-  .fa-num {
-    -moz-font-feature-settings: "ss02";
-    -webkit-font-feature-settings: "ss02";
-    font-feature-settings: "ss02";
+  a{
+    &:link{
+      @apply text-link;
+    }
+    &:hover,&:focus, &:active{
+      @apply text-link-hover;
+    }
+    &:visited{
+      @apply text-link;
+    }
   }
 
 }

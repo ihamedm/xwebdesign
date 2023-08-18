@@ -1,0 +1,34 @@
+@layer utilities {
+  .form-simple{
+    @apply mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
+
+    &-checkbox{
+      @apply rounded border-slate-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50;
+    }
+
+  }
+
+  form{
+    input{
+      @apply form-input form-simple;
+    }
+    textarea{
+      @apply form-textarea form-simple;
+    }
+    select{
+      @apply form-select form-simple;
+    }
+    select[multiple]{
+      @apply form-multiselect form-simple;
+    }
+    input[type='checkbox']{
+      @apply form-checkbox form-simple-checkbox;
+    }
+    input[type='radio']{
+      @apply form-radio;
+    }
+    label{
+      @apply block;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+
+@font-face {
+  font-family: 'IRANYekanXVF';
+  src: url('../assets/fonts/IRANYekanXVF.woff') format('woff-variations'),
+    /* will be the standard and works in Safari now */
+  url('../assets/fonts/IRANYekanXVF.woff') format('woff');
+  /* for the other supporting browsers */
+  font-weight: 100 1000;
+  font-display: fallback;
+
+}
+
+@font-face {
+  font-family: IRANYekanX;
+  src: url('../assets/fonts/staticfonts/IRANYekanX-regular.woff') format('woff');
+}
+@font-face {
+  font-family: IRANYekanX;
+  src: url('../assets/fonts/staticfonts/IRANYekanX-bold.woff') format('woff');
+  font-weight: 700;
+}
+
+
+body {
+  font-family: IRANYekanX, tahoma;
+}
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: 'IRANYekanXVF', tahoma;
+  }
+}
+
+
+.fa-num {
+  -moz-font-feature-settings: "ss02";
+  -webkit-font-feature-settings: "ss02";
+  font-feature-settings: "ss02";
+}
+
+.num-w-eq {
+  -moz-font-feature-settings: "ss03";
+  -webkit-font-feature-settings: "ss03";
+  font-feature-settings: "ss03";
+}
+
+.font-dot-0{
+  font-variation-settings: "dots" 0
+}
+.font-dot-1{
+  font-variation-settings: "dots" 1
+}
+.font-dot-2{
+  font-variation-settings: "dots" 2
+}
+.font-dot-3{
+  font-variation-settings: "dots" 3
+}
+.font-dot-3{
+  font-variation-settings: "dots" 4
+}

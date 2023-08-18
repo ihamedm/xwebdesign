@@ -1,4 +1,6 @@
-<?php get_header();?>
+<?php
+/* Template Name: page wide */
+get_header();?>
     <main class="articles flex-col gap-6 flex-1">
 
         <?php
@@ -28,5 +30,4 @@
     </main>
 
 
-<?php get_sidebar();?>
 <?php get_footer();?>

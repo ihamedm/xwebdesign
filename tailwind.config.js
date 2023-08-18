@@ -23,17 +23,22 @@ module.exports = {
       colors:{
         transparent: 'transparent',
         text: '#212121',
-        link: '#18b7cd',
+        link: {
+          DEFAULT : '#0069c2',
+          'hover' : '#00518f',
+          'visited' : '#6900ff'
+        },
         primary: {
-          100: '#fbebf0',
-          200: '#f3c1d0',
-          300: '#eda3ba',
-          400: '#e47a9a',
-          500: '#df6086',
-          DEFAULT: '#d73868',
-          700: '#c4335f',
-          800: '#99284a',
-          900: '#761f39',
+          50 : '#eaf3fa',
+          100: '#bed8ee',
+          200: '#9ec6e6',
+          300: '#72abdb',
+          400: '#569bd4',
+          500: '#2c82c9',
+          DEFAULT: '#2876b7',
+          700: '#1f5c8f',
+          800: '#18486f',
+          900: '#123754',
         },
       }
     }
