@@ -5,7 +5,7 @@
     <footer class="border-t border-slate-100">
         <div class="container">
             <div class="flex-col bg-white px-6">
-                <div id="footer-main" class="flex py-12 gap-6">
+                <div id="footer-main" class="max-md:flex-col flex py-12 gap-6">
                     <div class="about flex-col basis-1/4">
                         <h4 class="text-base font-bold text-slate-800"><span class="text-primary">ایکس</span> وب دیزاین</h4>
                         <p class="text-sm text-slate-700 font-light">

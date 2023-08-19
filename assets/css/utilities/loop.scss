@@ -1,0 +1,7 @@
+@layer utilities {
+  .post-categories{
+    a{
+      @apply bg-primary-50 text-primary px-1 py-1 rounded-md font-medium text-xs;
+    }
+  }
+}

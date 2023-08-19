@@ -1,0 +1,55 @@
+#drawer-menu{
+
+
+
+  .menu-item-has-children{
+    > a {
+      position: relative;
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+
+      &:after{
+        content: "+";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &.opened {
+      >a{
+        @apply text-primary;
+
+        &:after{
+          content: "-"
+        }
+      }
+
+      .sub-menu{
+        padding: 0 0 16px 0;
+        height: auto;
+        transform: scaleY(1);
+        visibility: visible;
+      }
+    }
+
+    .sub-menu{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      transform: scaleY(0);
+      height:0;
+      transform-origin: top;
+      transition: transform 300ms;
+      border-top:1px solid #fff;
+      visibility: hidden;
+      overflow: hidden;
+
+      li{
+        margin:4px 0;
+      }
+    }
+  }
+}

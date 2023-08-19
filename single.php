@@ -7,14 +7,20 @@
 
             <article class="border-b border-slate-100 pb-6 mb-6">
                 <div class="flex-col gap-6">
-                    <h2 class="font-bold text-xl">
+                    <div class="post-categories pb-2 "><?php the_category(' , ');?></div>
+                    <h2 class="font-bold text-xl max-md:text-sm">
                         <?php the_title();?>
                     </h2>
-                    <div class="flex gap-4 py-4 text-xs font-light">
-                        <?php the_category(' , ');?>
-                        <?php printf('آخرین بروز رسانی در %s توسط %s', get_the_modified_date(), get_the_author());?>
+
+                    <div class="flex gap-4 py-4 text-xs font-light items-center flex-wrap">
+
+                        <span class="max-md:hidden">آخرین بروز رسانی در</span><span class="font-medium text-slate-500"><?php echo get_the_modified_date();?></span>
+                        <span class="text-slate-100 px-0">|</span>
+                        <span class="text-slate-500"><?php echo get_the_author();?></span>
+
                     </div>
-                    <div class="font-light font-dot-4 prose max-w-full">
+
+                    <div class="font-light font-dot-4 prose max-w-full max-md:text-sm">
                         <?php the_content();?>
                     </div>
 
@@ -29,7 +35,6 @@
 
 
     </main>
-
 
 <?php get_sidebar();?>
 <?php get_footer();?>

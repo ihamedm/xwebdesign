@@ -34,7 +34,7 @@ class Setup{
         $version = wp_get_theme()->get('Version');
 
         wp_enqueue_style( 'Xweb',  get_stylesheet_directory_uri() . '/dist/styles.css' ,null, $version);
-        wp_enqueue_script('Xweb', get_stylesheet_directory_uri() .'/dist/scripts.js' , null , $version, true );
+        wp_enqueue_script('Xweb', get_stylesheet_directory_uri() .'/dist/scripts.js' ,  ['jquery'] , $version, true );
 
 
         wp_localize_script('spd', 'SpdJs', array(
