@@ -12,6 +12,12 @@
     }
   }
 
+  .prose{
+    ol,ul{
+      @apply pr-5;
+    }
+  }
+
 }
 
 .aligncenter{

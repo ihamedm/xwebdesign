@@ -2657,6 +2657,10 @@ a:visited {
   color: rgb(0 105 194 / var(--tw-text-opacity));
 }
 
+.prose ol,.prose ul {
+  padding-right: 1.25rem;
+}
+
 #primary-menu li {
   display: block;
 }
