@@ -59,7 +59,7 @@
                         array(
                             'theme_location' => 'primary',
                             'container' => false,
-                            'menu_class' => 'menu menu-horizontal flex items-center text-sm gap-4 text-right',
+                            'menu_class' => 'menu menu-horizontal',
                             'menu_id' => 'primary-menu',
                         )
                     );
