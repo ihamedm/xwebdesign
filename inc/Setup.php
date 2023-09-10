@@ -18,7 +18,7 @@ class Setup{
 
         // filters
         add_filter('intermediate_image_sizes', array($this, 'remove_useless_image_sizes'));
-        add_filter('use_block_editor_for_post_type', array($this, 'disable_gutenberg_for_post_types'), 10, 2);
+//        add_filter('use_block_editor_for_post_type', array($this, 'disable_gutenberg_for_post_types'), 10, 2);
 
     }
 
@@ -79,8 +79,8 @@ class Setup{
     }
 
     public function set_thumbnail_sizes() {
-        add_image_size( 'spd-thumb', 240, 140 , true );
-        add_image_size( 'spd-cover', 650, 500 , true );
+        add_image_size( 'spd-thumb', 240, 240 , false );
+        add_image_size( 'spd-cover', 650, 500 , false );
     }
 
 

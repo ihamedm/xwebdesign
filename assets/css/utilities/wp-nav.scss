@@ -3,7 +3,7 @@
     @apply block;
 
     a{
-      @apply block py-2 px-3 !text-slate-700
+      @apply block py-2 px-3 !text-slate-700 text-right
     }
 
     :not(.menu-item-has-children) a{

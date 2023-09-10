@@ -17,7 +17,7 @@
 
     <header>
         <div class="container">
-            <div class="flex-col bg-white border-b border-slate-100 p-3 md:p-6 pb-3">
+            <div class="flex-col bg-white border-b border-slate-100 p-3 md:p-6 md:pb-3">
                 <div class="flex justify-between max-md:items-center ">
 
                     <div class="drawer-toggle w-8 h-8 bg-slate-100 rounded-md flex flex-col gap-1 items-center justify-center md:hidden">
@@ -59,7 +59,7 @@
                         array(
                             'theme_location' => 'primary',
                             'container' => false,
-                            'menu_class' => 'menu flex items-center text-sm gap-4',
+                            'menu_class' => 'menu menu-horizontal flex items-center text-sm gap-4 text-right',
                             'menu_id' => 'primary-menu',
                         )
                     );

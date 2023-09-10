@@ -1,8 +1,8 @@
 <?php get_header();?>
     <main class="articles flex-col gap-6 flex-1">
-
+        <?php //spd_breadcrmbs(); ?>
         <?php
-        if(have_posts()) : while(have_posts()) : the_post();
+            if(have_posts()) : while(have_posts()) : the_post();
             ?>
 
             <article class="border-b border-slate-100 pb-6 mb-6">

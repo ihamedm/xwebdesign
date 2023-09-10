@@ -24,3 +24,10 @@ if ( ! function_exists( 'pagination' ) ) :
         ) );
     }
 endif;
+
+
+function spd_breadcrmbs(){
+    echo '<div class="text-sm breadcrumbs pb-4">';
+        if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs();
+    echo '</div>';
+}
