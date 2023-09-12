@@ -18,7 +18,7 @@ class Setup{
 
         // filters
         add_filter('intermediate_image_sizes', array($this, 'remove_useless_image_sizes'));
-//        add_filter('use_block_editor_for_post_type', array($this, 'disable_gutenberg_for_post_types'), 10, 2);
+        add_filter('use_block_editor_for_post_type', array($this, 'disable_gutenberg_for_post_types'), 10, 2);
 
     }
 
