@@ -28,7 +28,7 @@ if(have_posts()) : while(have_posts()) : the_post();
 
                 </div>
                 <div class="font-light font-dot-4 prose max-w-full max-md:text-sm">
-                    <?php the_content('<span class="text-primary">ادامه مطلب ...</span>');?>
+                    <?php the_excerpt();?>
                 </div>
             </div>
         </div>
